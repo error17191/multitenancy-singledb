@@ -9,6 +9,9 @@ trait ForTenant
 {
     public static function boot()
     {
+//        \DB::listen(function ($query) {
+//            dump($query->sql);
+//        });
         parent::boot();
 
         $manager = app(Manager::class);
