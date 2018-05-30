@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Scope;
 
 class TenantScope implements Scope
 {
+    protected $tenant;
+
+    public function __construct(Model $tenant)
+    {
+        $this->tenant = $tenant;
+    }
+
     public function apply(Builder $builder, Model $model)
     {
-        return $builder->where('company_id', '=', 1);
+        return $builder->where('company_id', '=', $this->tenant->id);
     }
 }
