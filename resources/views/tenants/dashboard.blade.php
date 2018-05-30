@@ -17,6 +17,15 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="card">
+                    <div class="card-header">Dashboard for X</div>
+
+                    <div class="card-body">
+                        @include('tenants.partials._create')
+                    </div>
+                </div>
             </div>
         </div>
     </div>

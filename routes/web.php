@@ -20,6 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('tenant','auth')->group(function (){
-    Route::get('projects','Tenant\ProjectsController@index');
+    Route::post('projects','Tenant\ProjectsController@store')->name('projects.store');
     Route::get('{company}','Tenant\DashboardController@index');
 });
