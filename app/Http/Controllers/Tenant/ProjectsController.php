@@ -16,4 +16,9 @@ class ProjectsController extends Controller
 
         return back();
     }
+
+    public function show(Project $project)
+    {
+        return view('tenants.show', compact('project'));
+    }
 }

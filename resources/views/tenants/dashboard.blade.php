@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <div class="list-group">
                             @foreach($projects as $project)
-                                <a href="/{{$project->id}}" class="list-group-item">
+                                <a href="{{route('projects.show',$project)}}" class="list-group-item">
                                     {{$project->name}}
                                 </a>
                             @endforeach

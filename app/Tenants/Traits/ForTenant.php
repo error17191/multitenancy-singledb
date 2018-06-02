@@ -10,14 +10,12 @@ trait ForTenant
 {
     public static function boot()
     {
-//        \DB::listen(function ($query) {
-//            dump($query->sql);
-//        });
         parent::boot();
 
         $manager = app(Manager::class);
 
         static::addGlobalScope(new TenantScope($manager->getTenant()));
+
         static::observe(app(TenantObserver::class));
     }
 }
