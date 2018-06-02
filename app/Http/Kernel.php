@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Tenant\ConfigMiddleware;
 use App\Http\Middleware\Tenant\TenantMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -42,7 +43,8 @@ class Kernel extends HttpKernel
             'bindings',
         ],
         'tenant' => [
-            TenantMiddleware::class
+            TenantMiddleware::class,
+            ConfigMiddleware::class
         ]
     ];
 
